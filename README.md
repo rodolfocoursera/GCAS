@@ -6,17 +6,16 @@ Starting from two data sets related with Human Activity Recognition Using Smartp
 
 The original datasets include the data collected from the embedded accelerometer and gyroscope of a smartphone while a person, wearing the phone, performed six activities from walking to laying.
 
-##Files:
+##Files
 
- * README.md. The present file that explains how all the files all related
+ * __README.md__. The present file that explains how all the files all related
          
-* CodeBook.md. The dataset variables and a detailed explanation about the data and its transformation
+* __CodeBook.md__. Contains the description of the dataset variables and an explanation about the data and its transformation.
 
-* run_analysis.R. The script that generates MeanTidySet.txt. A comma-separated file resulting of merge and transform both test and train datasets from Human Activity Recognition Using Smartphones Dataset.
+* __run_analysis.R__. The script that generates MeanTidySet.txt, a comma-separated file resulting of merge and transform both test and train datasets from Human Activity Recognition Using Smartphones Dataset.
 
 ##The script
-The script does the following tasks in order to produce a "tidy" dataset meanTidySet.txt 
-that can be used for later analysis:
+The script does the following tasks in order to produce a "tidy" dataset meanTidySet.txt that can be used for later analysis:
 
 1. The training and the test sets __were merged__ to create one data set.
 2. The variables not related to both the mean and standard deviation were removed. Specifically those whose name not contained __"mean()" or "std()"__, excepting for Subject and ActivityId variables.
