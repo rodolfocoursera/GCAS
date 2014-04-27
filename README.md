@@ -6,13 +6,13 @@ Starting from two data sets related with Human Activity Recognition Using Smartp
 
 The original datasets include the data collected from the embedded accelerometer and gyroscope of a smartphone while a person, wearing the phone, performed six activities from walking to laying.
 
-##This repository includes the following files:
+##Files:
 
-         * README.md. The present file that explains how all the files all related
+ * README.md. The present file that explains how all the files all related
          
-         * CodeBook.md. The dataset variables and a detailed explanation about the data and its transformation
-         
-         * run\_analysis.R. The script that generates MeanTidySet.txt. A comma-separated file resulting of merge and transform both test and train datasets from Human Activity Recognition Using Smartphones Dataset.
+* CodeBook.md. The dataset variables and a detailed explanation about the data and its transformation
+
+* run_analysis.R. The script that generates MeanTidySet.txt. A comma-separated file resulting of merge and transform both test and train datasets from Human Activity Recognition Using Smartphones Dataset.
 
 ##The script
 The script does the following tasks in order to produce a "tidy" dataset meanTidySet.txt 
