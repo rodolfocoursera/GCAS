@@ -22,8 +22,8 @@ that can be used for later analysis:
 7. A TXT comma-separated file was created from the data obtained in the point 6. 
 
 The run\_analysis.R script requires these datasets in the same working directory used by the script run\_analysis.R:
-         UCI HAR Dataset/train/X_train.txt and 
-         UCI HAR Dataset/test/X_test.txt data sets 
+* UCI HAR Dataset/train/X_train.txt and 
+* UCI HAR Dataset/test/X_test.txt data sets 
 
 These files can be download at 
          https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
