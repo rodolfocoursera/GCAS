@@ -61,30 +61,32 @@ The experiments have been carried out with a group of 30 volunteers. The dataset
 
 The transformation of the original dataset into the MeanTidySet was the following:
 
-1. Merges the training and the test sets to create one data set   
-        # Reading the train and test sets 
-        # Merging with activity id
-        # Merging with the subject who performed the activity
-        # Creating a new dataset with both train and test sets
+1. Merges the training and the test sets to create one data set
+
+        *Reading the train and test sets 
+        *Merging with activity id
+        *Merging with the subject who performed the activity
+        *Creating a new dataset with both train and test sets
       
 2. Extracts only the measurements on the mean and standard deviation for each measurement
-         # Reading features file
-         # Extracting column indices for mean and std features using regular expresions  
-         # Merging both features indices and sorting it
-         # Adding 2 to the indices because the first two columns of the tidySet are ActivityId and Subject 
-         # Extracting only the measures for mean and std
+
+        *Reading features file
+        *Extracting column indices for mean and std features using regular expresions  
+        *Merging both features indices and sorting it
+        *Adding 2 to the indices because the first two columns of the tidySet are ActivityId and Subject 
+        *Extracting only the measures for mean and std
      
 3. Uses descriptive activity names to name the activities in the data set
-         # Getting the numbers and names of the activities
-         # Merging ActivityNames with the tidySet
+
+        *Getting the numbers and names of the activities
+        *Merging ActivityNames with the tidySet
      
 4. Appropriately labels the data set columns with descriptive names
      
 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
     
-         # Calculating the average of each column for each group of activity and subject
-         # Trasposing the results to get the feautures in columns and the values for each subject and
-         # activity in rows
-         # Getting the name of the activities
-         # Sorting the results by subject and reordering the columns
-         # Writting the dataset to a TXT file
+        *Calculating the average of each column for each group of activity and subject
+        *Trasposing the results to get the feautures in columns and the values for each subject and activity in rows
+        *Getting the name of the activities
+        *Sorting the results by subject and reordering the columns
+        *Writting the dataset to a TXT file
