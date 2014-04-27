@@ -50,7 +50,6 @@ __The variables are__ the following:
 * fBodyBodyGyroJerkMag-mean(),fBodyBodyGyroJerkMag-std()
 
 ## Data
-
 The original dataset was download from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip and includes the data collected from the embedded accelerometer and gyroscope of a smartphone while a person, wearing the phone, performed six activities (WALKING, WALKING UPSTAIRS, WALKING DOWNSTAIRS, SITTING, STANDING, LAYING). Using its embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz were recorded. 
 
 The experiments have been carried out with a group of 30 volunteers. The dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data:
@@ -62,9 +61,30 @@ The experiments have been carried out with a group of 30 volunteers. The dataset
 
 The transformation of the original dataset into the MeanTidySet was the following:
 
-1. The training and the test sets __were merged__ to create one data set.
-2. The variables not related to both the mean and standard deviation were removed. Specifically those whose name not contained __"mean()" or "std()"__, excepting for Subject and ActivityId variables.
-3. The __activity Id__ was replaced with the __descriptive activity names__: WALKING, WALKING UPSTAIRS, WALKING DOWNSTAIRS, SITTING, STANDING, LAYING.
-4. The __columns were named with descriptive names__.
-5. A data set with the __average of each variable for each activity and each subject__ was created.
-6. The data were __sorted by subject and name of the activity__.
+1. Merges the training and the test sets to create one data set   
+        # Reading the train and test sets 
+        # Merging with activity id
+        # Merging with the subject who performed the activity
+        # Creating a new dataset with both train and test sets
+      
+2. Extracts only the measurements on the mean and standard deviation for each measurement
+         # Reading features file
+         # Extracting column indices for mean and std features using regular expresions  
+         # Merging both features indices and sorting it
+         # Adding 2 to the indices because the first two columns of the tidySet are ActivityId and Subject 
+         # Extracting only the measures for mean and std
+     
+3. Uses descriptive activity names to name the activities in the data set
+         # Getting the numbers and names of the activities
+         # Merging ActivityNames with the tidySet
+     
+4. Appropriately labels the data set columns with descriptive names
+     
+5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+    
+         # Calculating the average of each column for each group of activity and subject
+         # Trasposing the results to get the feautures in columns and the values for each subject and
+         # activity in rows
+         # Getting the name of the activities
+         # Sorting the results by subject and reordering the columns
+         # Writting the dataset to a TXT file
