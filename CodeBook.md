@@ -1,9 +1,11 @@
 CodeBook for MeanTidySet.txt file
 ========================================================
+MeanTidySet.txt is a comma-separated file resulting of merge and transform both test and train datasets from 
+Human Activity Recognition Using Smartphones Dataset.
 
 ## Variables
 
-The file _MeanTidySet.txt_ contains the following 66 variables with __its mean for each subject and activity__ plus the id of the subject and the name of the activity. __A total of 68 variables and 180 records__.
+The file _MeanTidySet.txt_ contains __a total of 68 variables and 180 records__. 66 variables with __its mean for each subject and activity__ plus the id of the subject and the name of the activity.
 
 The variables contains information collected from the accelerometer and gyroscope 3-axial raw signals (tAcc-XYZ and tGyro-XYZ), filtered to remove noise and processed to separate into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) and to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). 
 
@@ -48,8 +50,6 @@ __The variables are__ the following:
 * fBodyBodyGyroJerkMag-mean(),fBodyBodyGyroJerkMag-std()
 
 ## Data
-MeanTidySet.txt is a comma-separated file resulting of merge and transform both test and train datasets from 
-Human Activity Recognition Using Smartphones Dataset.
 
 The original dataset was download from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip and includes the data collected from the embedded accelerometer and gyroscope of a smartphone while a person, wearing the phone, performed six activities (WALKING, WALKING UPSTAIRS, WALKING DOWNSTAIRS, SITTING, STANDING, LAYING). Using its embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz were recorded. 
 
@@ -59,3 +59,12 @@ The experiments have been carried out with a group of 30 volunteers. The dataset
 
 
 ## Transformations
+
+The transformation of the original dataset into the MeanTidySet was the following:
+
+1. The training and the test sets __were merged__ to create one data set.
+2. The variables not related to both the mean and standard deviation were removed. Specifically those whose name not contained __"mean()" or "std()"__, excepting for Subject and ActivityId variables.
+3. The __activity Id__ was replaced with the __descriptive activity names__: WALKING, WALKING UPSTAIRS, WALKING DOWNSTAIRS, SITTING, STANDING, LAYING.
+4. The __columns were named with descriptive names__.
+5. A data set with the __average of each variable for each activity and each subject__ was created.
+6. The data were __sorted by subject and name of the activity__.
