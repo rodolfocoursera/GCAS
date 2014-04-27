@@ -61,9 +61,6 @@ run_analysis  <- function(){
          # Getting the numbers and names of the activities
            ActivityNames  <- read.table(file="UCI HAR Dataset/activity_labels.txt", header=F, col.names=c("ActivityId","Activity"))
           
-         # Merging ActivityNames with the tidySet and removing ActivityId
-           #tidySet  <- merge(x=tidySet, y=ActivityNames, by="ActivityId")[,1:length(tidySet)+1]
-         
          # Merging ActivityNames with the tidySet
            tidySet  <- merge(x=tidySet, y=ActivityNames, by="ActivityId")
      
