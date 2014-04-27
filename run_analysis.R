@@ -1,33 +1,23 @@
-# You will be required to submit: 
-#         1) a tidy data set as described below
-#         2) a link to a Github repository with your script for performing the analysis
-#         3) a code book that describes the variables, the data, and any transformations 
-#         or work that you performed to clean up the data called CodeBook.md. 
-#         4) You should also include a README.md in the repo with your scripts. 
-#            This repo explains how all of the scripts work and how they are connected.  
-# 
-# This script uses these datasets 
-#       UCI HAR Dataset/train/X_train.txt and 
-#       UCI HAR Dataset/test/X_test.txt data sets 
-# obtained at 
-#       https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
-# in order to produce a "tidy" dataset that can be used for later analysis
 #
-# The scripts does the following tasks:
+# The scripts does the following tasks in order to produce a "tidy" dataset meanTidySet.txt 
+# that can be used for later analysis:
+#
 #         1. Merges the training and the test sets to create one data set.
 #         2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 #         3. Uses descriptive activity names to name the activities in the data set
 #         4. Appropriately labels the data set with descriptive names for columns
 #         5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-
-
-# 12. Prepare code book
-# 13. and Read me document
-# 14. Upload "run_analysis.R", "code book" and "read me" files to Github and Share the link for Question 2 of Assessment
+#
+#       This script requires these datasets:
+#               UCI HAR Dataset/train/X_train.txt and 
+#               UCI HAR Dataset/test/X_test.txt data sets 
+#
+#       These files were download at 
+#               https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
 run_analysis  <- function(){
         
-     # Merges the training and the test sets to create one data set   
+     # 1. Merges the training and the test sets to create one data set   
   
         # Reading the train and test sets 
           trainSet  <- read.table(file="UCI HAR Dataset/train/X_train.txt", header=F)
@@ -50,7 +40,7 @@ run_analysis  <- function(){
         # Creating a new dataset with both train and test sets
           tidySet  <- rbind(trainSet, testSet)
      
-     # Extracts only the measurements on the mean and standard deviation for each measurement
+     # 2. Extracts only the measurements on the mean and standard deviation for each measurement
          # Reading features file
            features  <- read.table(file="UCI HAR Dataset/features.txt", header=F, col.names=c("id", "name"))
             
@@ -67,7 +57,7 @@ run_analysis  <- function(){
          # Extracting only the measures for mean and std
            tidySet  <- tidySet[,c(1,2,tidySetFeaturesIndex)]
      
-     # Uses descriptive activity names to name the activities in the data set
+     # 3. Uses descriptive activity names to name the activities in the data set
          # Getting the numbers and names of the activities
            ActivityNames  <- read.table(file="UCI HAR Dataset/activity_labels.txt", header=F, col.names=c("ActivityId","Activity"))
           
@@ -77,11 +67,11 @@ run_analysis  <- function(){
          # Merging ActivityNames with the tidySet
            tidySet  <- merge(x=tidySet, y=ActivityNames, by="ActivityId")
      
-     # Appropriately labels the data set columns with descriptive names
+     # 4. Appropriately labels the data set columns with descriptive names
            names(tidySet)  <- c("ActivityId","Subject",as.character(features[selectedFeaturesIndex,2]),"Activity")
         
      
-     # Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+     # 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
     
          # Calculating the average of each column for each group of activity and subject
            meanTidySet  <- sapply(split(x=tidySet,f=list(tidySet$Activity,tidySet$Subject))
