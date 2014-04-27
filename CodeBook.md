@@ -73,7 +73,6 @@ The transformation of the original dataset into the MeanTidySet was the followin
         *Reading features file
         *Extracting column indices for mean and std features using regular expresions  
         *Merging both features indices and sorting it
-        *Adding 2 to the indices because the first two columns of the tidySet are ActivityId and Subject 
         *Extracting only the measures for mean and std
      
 3. Uses descriptive activity names to name the activities in the data set
@@ -89,4 +88,4 @@ The transformation of the original dataset into the MeanTidySet was the followin
         *Trasposing the results to get the feautures in columns and the values for each subject and activity in rows
         *Getting the name of the activities
         *Sorting the results by subject and reordering the columns
-        *Writting the dataset to a TXT file
+        *Writing the dataset to a TXT file
