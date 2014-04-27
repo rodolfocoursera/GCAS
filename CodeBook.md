@@ -3,21 +3,22 @@ CodeBook for MeanTidySet.txt file
 
 ## Variables
 
-The file _MeanTidySet.txt_ contains the following 66 variables and __its mean for each subject and activity__ plus the id of the subject and the name of the activity.
+The file _MeanTidySet.txt_ contains the following 66 variables with __its mean for each subject and activity__ plus the id of the subject and the name of the activity. __A total of 68 variables and 180 records__.
 
-The data contains information collected from the accelerometer and gyroscope 3-axial raw signals (tAcc-XYZ and tGyro-XYZ), filtered to remove noise and processed to separate into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) and to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). 
+The variables contains information collected from the accelerometer and gyroscope 3-axial raw signals (tAcc-XYZ and tGyro-XYZ), filtered to remove noise and processed to separate into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) and to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). 
 
 Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
 
 Fast Fourier Transform (FFT) was applied to some of these signals (fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag). 
 
 The set of variables that were estimated from these signals was: 
-__mean()__: Mean value
-__std()__: Standard deviation
+        __mean()__: Mean value
+        __std()__: Standard deviation
 
-And for each variable, the mean of each subject and activity was calculated ('-XYZ' is used to denote 3-axial signals in the X, Y and Z directions)
+And __for each variable, the mean of each subject and activity was calculated__ ('-XYZ' is used to denote 3-axial signals in the X, Y and Z directions)
  
-__The variables are__:
+__The variables are__ the following:
+
 * Subject. The id of the subject of the experiment. A number between 1 and 30
 * Activity. WALKING, WALKING UPSTAIRS, WALKING DOWNSTAIRS, SITTING, STANDING, LAYING
 * tBodyAcc-mean()-X,tBodyAcc-mean()-Y,tBodyAcc-mean()-Z. 
