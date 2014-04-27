@@ -84,7 +84,7 @@ run_analysis  <- function(){
          # Sorting the results by subject and reordering the columns
            meanTidySet  <- meanTidySet[order(meanTidySet$Subject),c(2,length(tidySet),4:length(tidySet)-1)]
      
-         # Writting the dataset to a TXT file
+         # Writing the dataset to a TXT file
           write.table(x=meanTidySet, file="meanTidySet.txt", sep=",", row.names=F, col.names=T)
 
 }
